@@ -1,6 +1,6 @@
-# Weather Forecast Dashboard
+# WeatherOS
 
-A React + Vite weather dashboard for exploring current conditions, forecasts, and map-based insights.
+A React + Vite weather experience for exploring current conditions, forecasts, and map-based insights.
 
 Currently, two official plugins are available:
 

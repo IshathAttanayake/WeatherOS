@@ -1,58 +1,9 @@
-const forecast = [
-  {
-    day: "Today",
-    icon: "☀️",
-    high: 29,
-    low: 23,
-    rain: 10,
-  },
-  {
-    day: "Thu",
-    icon: "🌤",
-    high: 30,
-    low: 24,
-    rain: 20,
-  },
-  {
-    day: "Fri",
-    icon: "🌧",
-    high: 26,
-    low: 22,
-    rain: 75,
-  },
-  {
-    day: "Sat",
-    icon: "☁️",
-    high: 25,
-    low: 21,
-    rain: 30,
-  },
-  {
-    day: "Sun",
-    icon: "⛈",
-    high: 24,
-    low: 20,
-    rain: 90,
-  },
-  {
-    day: "Mon",
-    icon: "☀️",
-    high: 31,
-    low: 25,
-    rain: 5,
-  },
-  {
-    day: "Tue",
-    icon: "🌤",
-    high: 29,
-    low: 23,
-    rain: 15,
-  },
-];
+import Card from "./ui/Card";
+import { forecast } from "../data/forecastData";
 
 function ForecastCard() {
   return (
-    <div className="bg-[#102038] border border-slate-700 rounded-3xl p-6">
+    <Card>
 
       <h2 className="text-lg font-semibold mb-6">
         📅 7-Day Forecast
@@ -64,7 +15,7 @@ function ForecastCard() {
 
           <div
             key={item.day}
-            className="bg-[#162A44] rounded-2xl py-5 flex flex-col items-center hover:bg-[#1C3556] transition duration-300"
+            className="bg-[#162A44] rounded-2xl py-5 flex flex-col items-center hover:bg-[#1C3556] hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer"
           >
 
             <p className="text-sm text-slate-400">
@@ -93,7 +44,7 @@ function ForecastCard() {
 
       </div>
 
-    </div>
+    </Card>
   );
 }
 

@@ -4,6 +4,8 @@ import AirQualityCard from "../components/AirQualityCard";
 import TemperatureChart from "../components/TemperatureChart";
 import FavoriteCities from "../components/FavoriteCities";
 import ForecastCard from "../components/ForecastCard";
+import TodaysHighlights from "../components/Today'sHighlights";
+import WeatherRadar from "../components/WeatherRadar";
 
 function Home() {
   return (
@@ -29,10 +31,18 @@ function Home() {
 
           <div className="col-span-5">
             <FavoriteCities />
+          </div>
 
-            <div className="col-span-12">
-    <ForecastCard />
-</div>
+          <div className="col-span-12">
+            <ForecastCard />
+          </div>
+
+          <div className="col-span-6">
+            <TodaysHighlights />
+          </div>
+
+          <div className="col-span-6">
+            <WeatherRadar />
           </div>
 
         </div>

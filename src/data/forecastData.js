@@ -1,0 +1,51 @@
+export const forecast = [
+  {
+    day: "Today",
+    icon: "☀️",
+    high: 29,
+    low: 23,
+    rain: 10,
+  },
+  {
+    day: "Thu",
+    icon: "🌤",
+    high: 30,
+    low: 24,
+    rain: 20,
+  },
+  {
+    day: "Fri",
+    icon: "🌧",
+    high: 26,
+    low: 22,
+    rain: 75,
+  },
+  {
+    day: "Sat",
+    icon: "☁️",
+    high: 25,
+    low: 21,
+    rain: 30,
+  },
+  {
+    day: "Sun",
+    icon: "⛈",
+    high: 24,
+    low: 20,
+    rain: 90,
+  },
+  {
+    day: "Mon",
+    icon: "☀️",
+    high: 31,
+    low: 25,
+    rain: 5,
+  },
+  {
+    day: "Tue",
+    icon: "🌤",
+    high: 29,
+    low: 23,
+    rain: 15,
+  },
+];

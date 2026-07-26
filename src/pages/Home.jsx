@@ -6,8 +6,24 @@ import FavoriteCities from "../components/FavoriteCities";
 import ForecastCard from "../components/ForecastCard";
 import TodaysHighlights from "../components/Today'sHighlights";
 import WeatherRadar from "../components/WeatherRadar";
+import { useEffect } from "react";
+import { getCurrentWeather } from "../services/weatherService";
 
 function Home() {
+  
+  useEffect(() => {
+  async function loadWeather() {
+    try {
+      const data = await getCurrentWeather("Colombo");
+
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  loadWeather();
+}, []);
   return (
     <div className="min-h-screen bg-[#081220] text-white">
 

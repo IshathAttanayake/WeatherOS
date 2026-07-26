@@ -8,6 +8,8 @@ import TodaysHighlights from "../components/Today'sHighlights";
 import WeatherRadar from "../components/WeatherRadar";
 import { useEffect } from "react";
 import { getCurrentWeather } from "../services/weatherService";
+import { useEffect, useState } from "react";
+
 
 function Home() {
   

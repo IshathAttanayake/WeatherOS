@@ -1,5 +1,41 @@
-import { WiDayCloudy } from "react-icons/wi";
+import {
+  WiDaySunny,
+  WiDayCloudy,
+  WiCloud,
+  WiRain,
+  WiThunderstorm,
+  WiSnow,
+  WiFog,
+} from "react-icons/wi";
 import WeatherStat from "./WeatherStat";
+
+function getWeatherIcon(weatherMain) {
+  switch (weatherMain) {
+    case "Clear":
+      return <WiDaySunny size={150} className="text-yellow-300" />;
+
+    case "Clouds":
+      return <WiCloud size={150} className="text-gray-300" />;
+
+    case "Rain":
+    case "Drizzle":
+      return <WiRain size={150} className="text-blue-400" />;
+
+    case "Thunderstorm":
+      return <WiThunderstorm size={150} className="text-purple-400" />;
+
+    case "Snow":
+      return <WiSnow size={150} className="text-white" />;
+
+    case "Mist":
+    case "Fog":
+    case "Haze":
+      return <WiFog size={150} className="text-gray-400" />;
+
+    default:
+      return <WiDayCloudy size={150} className="text-yellow-300" />;
+  }
+}
 
 function HeroCard({ weather }) {
 
@@ -36,10 +72,13 @@ function HeroCard({ weather }) {
 
         </div>
 
-        <WiDayCloudy
-          size={150}
-          className="text-yellow-300"
-        />
+        <div className="flex flex-col items-center">
+  {getWeatherIcon(weather.weather[0].main)}
+
+  <p className="text-slate-400 mt-2">
+    {weather.weather[0].main}
+  </p>
+</div>
 
       </div>
 

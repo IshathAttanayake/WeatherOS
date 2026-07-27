@@ -16,8 +16,10 @@ function Home() {
   useEffect(() => {
   async function loadWeather() {
     try {
+      const [weather, setWeather] = useState(null);
       const data = await getCurrentWeather("Colombo");
-
+      
+setWeather(data);
       console.log(data);
     } catch (error) {
       console.error(error);

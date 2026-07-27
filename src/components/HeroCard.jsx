@@ -1,7 +1,16 @@
 import { WiDayCloudy } from "react-icons/wi";
 import WeatherStat from "./WeatherStat";
 
-function HeroCard() {
+function HeroCard({ weather }) {
+
+  if (!weather) {
+    return (
+      <div className="text-white text-center py-10">
+        Loading weather...
+      </div>
+    );
+  }
+
   return (
     <div className="bg-[#102038] rounded-3xl p-8 border border-slate-700">
 
@@ -10,19 +19,19 @@ function HeroCard() {
         <div>
 
           <p className="text-slate-400">
-            New York
+            {weather.name}
           </p>
 
           <h1 className="text-7xl font-bold mt-4">
-            74°
+            {Math.round(weather.main.temp)}°
           </h1>
 
-          <p className="text-xl mt-2">
-            Partly Cloudy
+          <p className="text-xl mt-2 capitalize">
+            {weather.weather[0].description}
           </p>
 
           <p className="text-slate-500 mt-2">
-            Feels like 71°
+            Feels like {Math.round(weather.main.feels_like)}°
           </p>
 
         </div>
@@ -36,10 +45,25 @@ function HeroCard() {
 
       <div className="grid grid-cols-4 gap-5 mt-10">
 
-        <WeatherStat title="Humidity" value="62%" />
-        <WeatherStat title="Wind" value="12 mph" />
-        <WeatherStat title="Visibility" value="10 mi" />
-        <WeatherStat title="Pressure" value="1013 hPa" />
+        <WeatherStat
+          title="Humidity"
+          value={`${weather.main.humidity}%`}
+        />
+
+        <WeatherStat
+          title="Wind"
+          value={`${weather.wind.speed} m/s`}
+        />
+
+        <WeatherStat
+          title="Visibility"
+          value={`${weather.visibility / 1000} km`}
+        />
+
+        <WeatherStat
+          title="Pressure"
+          value={`${weather.main.pressure} hPa`}
+        />
 
       </div>
 
